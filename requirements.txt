@@ -1,0 +1,8 @@
+pandas
+numpy
+Flask
+dill
+scikit-learn
+mlflow
+python-dotenv  # For working with environment variable
+# -e .
