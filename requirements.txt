@@ -7,5 +7,5 @@ mlflow
 python-dotenv  # For working with environment variable
 pymongo
 certifi
-pymongo[srv]==3.6
+# pymongo[srv]==3.6
 # -e .

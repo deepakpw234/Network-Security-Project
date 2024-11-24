@@ -1,0 +1,4 @@
+[ 2024-11-24 15:29:44,915 ] 9 root - INFO - data_ingestion_started
+[ 2024-11-24 15:29:44,916 ] 12 root - INFO - train_pipeline_work
+[ 2024-11-24 15:29:44,916 ] 14 root - INFO - data_ingestion_config_work
+[ 2024-11-24 15:29:44,916 ] 17 root - INFO - data_ingestion_work
