@@ -7,11 +7,11 @@ import pandas as pd
 import numpy as np
 import pymongo
 import pymongo.mongo_client
+load_dotenv()
 
 from src.exception.exception import CustomException
 from src.logging.logger import logging
 
-load_dotenv()
 
 MONGO_DB_URL = os.getenv("MONGO_DB_URL")
 
@@ -34,7 +34,7 @@ class NetworkDataExtract:
             data = pd.read_csv(file_path)
 
             data.reset_index(drop=True,inplace=True)
-
+            print(data)
             records = list(json.loads(data.T.to_json()).values())
 
             print(records)
