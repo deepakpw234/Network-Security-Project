@@ -20,6 +20,7 @@ MONGO_DB_URL = os.getenv("MONGO_DB_URL")
 class DataIngestion:
     def __init__(self,data_ingestion_config:DataIngestionConfig):
         try:
+            logging.info("Data Ingestion constructor initaited")
             self.data_ingestion_config = data_ingestion_config
         except Exception as e:
             raise CustomException(e,sys)
@@ -86,12 +87,19 @@ class DataIngestion:
 
     def initiate_data_ingestion(self):
         try:
+            logging.info("Calling data from mongo DB")
             dataframe = self.export_collection_to_dataframe()
+            logging.info("MongoDB data is loaded into to dataframe")
+            logging.info("Raw data saving in featuer store is started")
             dataframe = self.export_data_into_feature_store(dataframe)
+            logging.info("Raw data is saved in feature store")
+            logging.info("Train test split started")
             self.data_into_train_test_split(dataframe)
+            logging.info("Train test completed and train and test csv's saved in ingested store")
             dataingestionartifact = DataIngestionartifact(train_file_path=self.data_ingestion_config.training_file_path,
                                                           test_file_path=self.data_ingestion_config.testing_file_path)
             
+            logging.info("Train and test file path saved in the artifact")
 
             return dataingestionartifact
         except Exception as e:

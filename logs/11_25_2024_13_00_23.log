@@ -1,0 +1,11 @@
+[ 2024-11-25 13:00:27,059 ] 19 root - INFO - Mongo DB URL is loaded
+[ 2024-11-25 13:00:27,059 ] 14 root - INFO - Data ingestion started
+[ 2024-11-25 13:00:27,060 ] 24 root - INFO - Data Ingestion constructor initaited
+[ 2024-11-25 13:00:27,060 ] 91 root - INFO - Calling data from mongo DB
+[ 2024-11-25 13:00:28,162 ] 93 root - INFO - MongoDB data is loaded into to dataframe
+[ 2024-11-25 13:00:28,162 ] 94 root - INFO - Raw data saving in featuer store is started
+[ 2024-11-25 13:00:28,231 ] 96 root - INFO - Raw data is saved in feature store
+[ 2024-11-25 13:00:28,231 ] 97 root - INFO - Train test split started
+[ 2024-11-25 13:00:28,288 ] 99 root - INFO - Train test completed and train and test csv's saved in ingested store
+[ 2024-11-25 13:00:28,288 ] 103 root - INFO - Train and test file path saved in the artifact
+[ 2024-11-25 13:00:28,288 ] 19 root - INFO - Data ingestion Complated
