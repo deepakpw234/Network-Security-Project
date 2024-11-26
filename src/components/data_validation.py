@@ -83,12 +83,12 @@ class DataValidation:
 
     def initiate_data_validation(self)->DataValidationartifact:
         try:
-            self.train_file_path = DataIngestionartifact.train_file_path
-            self.test_file_path = DataIngestionartifact.test_file_path
+            train_file_path = self.data_ingestion_artifact.train_file_path
+            test_file_path = self.data_ingestion_artifact.test_file_path
 
             # read data from train and test
-            train_dataframe = DataValidation.read_data(self.train_file_path)
-            test_datafrane = DataValidation.read_data(self.test_file_path)
+            train_dataframe = DataValidation.read_data(train_file_path)
+            test_datafrane = DataValidation.read_data(test_file_path)
 
             # validate number of columns
             status = self.validate_no_of_columns(train_dataframe)

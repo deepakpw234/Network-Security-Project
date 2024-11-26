@@ -17,7 +17,6 @@ from src.constant import training_pipeline
 class TrainingPipelineConfig:
     def __init__(self,timestamp = datetime.now()):
         timestamp = timestamp.strftime("%d_%m_%Y_%H_%M_%S")
-        print(timestamp)
         self.pipeline_name = training_pipeline.PIPELINE_NAME
         self.artifact_name = training_pipeline.ARTIFACT_DIR
         self.artifact_dir = os.path.join(self.artifact_name,timestamp)
@@ -58,7 +57,7 @@ class DataValidationConfig:
         self.invalid_train_file_path:str = os.path.join(self.invalid_data_dir,training_pipeline.TRAIN_FILE_NAME)
         self.invalid_test_file_path:str = os.path.join(self.invalid_data_dir,training_pipeline.TEST_FILE_NAME)
         self.drift_report_file_path:str = os.path.join(self.data_validation_dir,training_pipeline.DATA_VALIDATION_DRIFT_REPROT_DIR,training_pipeline.DATA_VALIDATION_DRIFT_REPROT_FILE_NAME)
-        
+
 
 
 

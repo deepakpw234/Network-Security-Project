@@ -1,0 +1,11 @@
+[ 2024-11-26 07:26:53,353 ] 23 root - INFO - Data Ingestion constructor initaited
+[ 2024-11-26 07:26:53,353 ] 20 root - INFO - Data ingestion started
+[ 2024-11-26 07:26:53,353 ] 90 root - INFO - Calling data from mongo DB
+[ 2024-11-26 07:26:56,866 ] 92 root - INFO - MongoDB data is loaded into to dataframe
+[ 2024-11-26 07:26:56,866 ] 93 root - INFO - Raw data saving in featuer store is started
+[ 2024-11-26 07:26:57,002 ] 95 root - INFO - Raw data is saved in feature store
+[ 2024-11-26 07:26:57,002 ] 96 root - INFO - Train test split started
+[ 2024-11-26 07:26:57,167 ] 98 root - INFO - Train test completed and train and test csv's saved in ingested store
+[ 2024-11-26 07:26:57,168 ] 102 root - INFO - Train and test file path saved in the artifact
+[ 2024-11-26 07:26:57,169 ] 23 root - INFO - Data ingestion Completed
+[ 2024-11-26 07:26:57,188 ] 27 root - INFO - Data validation started

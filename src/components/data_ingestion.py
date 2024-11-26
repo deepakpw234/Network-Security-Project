@@ -30,7 +30,6 @@ class DataIngestion:
             database_name = self.data_ingestion_config.database_name
             collection_name = self.data_ingestion_config.collection_name
 
-            print(database_name)
             self.mango_client = pymongo.MongoClient(MONGO_DB_URL)
         
             collection = self.mango_client[database_name][collection_name]
@@ -41,8 +40,6 @@ class DataIngestion:
                 df.drop("_id",axis=1,inplace=True)
             
             df.replace({"na":np.nan},inplace=True)
-
-            print(df)
 
             return df
 
@@ -57,7 +54,6 @@ class DataIngestion:
 
             dataframe.to_csv(feature_store_file_path, index=False,header=True)
 
-            print(dataframe)
             return dataframe
 
         except Exception as e:
