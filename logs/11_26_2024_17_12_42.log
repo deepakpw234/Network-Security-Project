@@ -1,0 +1,25 @@
+[ 2024-11-26 17:12:46,272 ] 23 root - INFO - Data Ingestion constructor initaited
+[ 2024-11-26 17:12:46,273 ] 22 root - INFO - Data ingestion started
+[ 2024-11-26 17:12:46,273 ] 86 root - INFO - Calling data from mongo DB
+[ 2024-11-26 17:12:47,663 ] 88 root - INFO - MongoDB data is loaded into to dataframe
+[ 2024-11-26 17:12:47,664 ] 89 root - INFO - Raw data saving in featuer store is started
+[ 2024-11-26 17:12:47,713 ] 91 root - INFO - Raw data is saved in feature store
+[ 2024-11-26 17:12:47,713 ] 92 root - INFO - Train test split started
+[ 2024-11-26 17:12:47,765 ] 94 root - INFO - Train test completed and train and test csv's saved in ingested store
+[ 2024-11-26 17:12:47,765 ] 98 root - INFO - Train and test file path saved in the artifact
+[ 2024-11-26 17:12:47,766 ] 25 root - INFO - Data ingestion Completed
+[ 2024-11-26 17:12:47,778 ] 29 root - INFO - Data validation started
+[ 2024-11-26 17:12:47,820 ] 40 root - INFO - required columns are 31
+[ 2024-11-26 17:12:47,820 ] 41 root - INFO - dataframe has columns 31
+[ 2024-11-26 17:12:47,820 ] 40 root - INFO - required columns are 31
+[ 2024-11-26 17:12:47,820 ] 41 root - INFO - dataframe has columns 31
+[ 2024-11-26 17:12:47,935 ] 32 root - INFO - Data validation completed
+[ 2024-11-26 17:12:47,935 ] 25 root - INFO - Data Transfomation class is initiated with init constructor
+[ 2024-11-26 17:12:47,935 ] 36 root - INFO - Data transformation started
+[ 2024-11-26 17:12:47,935 ] 54 root - INFO - Initiate the data transformation with initiate function
+[ 2024-11-26 17:12:47,972 ] 62 root - INFO - Input and target columns created for training dataframe
+[ 2024-11-26 17:12:47,973 ] 68 root - INFO - Input and target columns craeted for test dataframe
+[ 2024-11-26 17:12:47,980 ] 39 root - INFO - Saving into numpy array
+[ 2024-11-26 17:12:47,982 ] 39 root - INFO - Saving into numpy array
+[ 2024-11-26 17:12:47,983 ] 50 root - INFO - Preprocessor is saving into pickle object
+[ 2024-11-26 17:12:47,990 ] 39 root - INFO - Data transformation completed

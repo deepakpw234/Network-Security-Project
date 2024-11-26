@@ -6,6 +6,9 @@ import numpy as np
 from src.exception.exception import CustomException
 from src.logging.logger import logging
 
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import r2_score
+
 
 import yaml
 import dill
@@ -54,3 +57,64 @@ def save_pickle_obj(file_path,obj:object):
 
     except Exception as e:
         raise CustomException(e,sys)
+    
+
+def load_pickle_object(file_path:str):
+    try:
+        logging.info("pickle object is loading")
+        if not os.path.exists(file_path):
+            print(f"{file_path} path is not avaiable")
+        with open(file_path,"rb") as file:
+            return pickle.load(file)
+
+    except Exception as e:
+        raise CustomException(e,sys)
+
+def load_numpy_array(file_path:str):
+    try:
+        logging.info("Numpy array is loading")
+        if not os.path.exists(file_path):
+            print(f"{file_path} path is not available")
+        with open(file_path,"rb") as file:
+            return np.load(file)
+
+    except Exception as e:
+        raise CustomException(e,sys)
+    
+
+def get_evaluate(x_train,y_train,x_test,y_test,models,params):
+    try:
+        report = {}
+        for i in range(len(models.values())):
+            model = list(models.values())[i]
+            para = params[list(params.keys())[i]]
+            
+            print(models['DecisionTree Classifier'])
+
+            gs = GridSearchCV(model,param_grid=para,cv=3)
+            gs.fit(x_train,y_train)
+
+            model.set_params(**gs.best_params_)
+            model.fit(x_train,y_train)
+
+            y_train_pred = model.predict(x_train)
+
+            y_test_pred = model.predict(x_test)
+
+            train_model_score = r2_score(y_train,y_train_pred)
+
+            test_model_score = r2_score(y_test,y_test_pred)
+
+            report[list(models.keys())[i]]=test_model_score
+
+
+        return report
+
+
+    except Exception as e:
+        raise CustomException(e,sys)
+    
+
+
+
+

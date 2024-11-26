@@ -3,7 +3,7 @@ import sys
 
 
 from src.components.data_ingestion import DataIngestion
-from src.entity.config_entity import DataIngestionConfig,DataValidationConfig, DataTransformationConfig
+from src.entity.config_entity import DataIngestionConfig,DataValidationConfig, DataTransformationConfig, ModelTrainerConfig
 from src.entity.config_entity import TrainingPipelineConfig
 
 from src.logging.logger import logging
@@ -12,6 +12,7 @@ from src.exception.exception import CustomException
 from src.components.data_validation import DataValidation
 
 from src.components.data_transformation import DataTransformation
+from src.components.model_training import ModelTrainer
 
 if __name__=="__main__":
     try:
@@ -38,6 +39,13 @@ if __name__=="__main__":
         print(data_transformation_artifact)
         logging.info("Data transformation completed")
 
+
+        model_trainer_config = ModelTrainerConfig(trainpipelineconfig)
+        model_trainer = ModelTrainer(data_transformation_artifact,model_trainer_config)
+        logging.info("Model training started")
+        model_trainer_artifact = model_trainer.initiate_model_training()
+        print(model_trainer_artifact)
+        logging.info("Model training completed")
 
     except Exception as e:
         raise CustomException(e,sys)
