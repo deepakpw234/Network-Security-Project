@@ -72,3 +72,8 @@ MODEL_TRAINER_TRAINED_MODEL_NAME:str = "model.pkl"
 MODEL_TRAINER_EXPECTED_SCORE:float = 0.6
 MODEL_TRAINER_OVER_FITTING_UNDER_FITTING_THRESHOLD:float = 0.05
 
+
+'''
+Constant for local to s3 bucket
+'''
+TRAINING_BUCKET_NAME = "networksecurity234"

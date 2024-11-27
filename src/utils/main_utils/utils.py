@@ -88,8 +88,6 @@ def get_evaluate(x_train,y_train,x_test,y_test,models,params):
         for i in range(len(models.values())):
             model = list(models.values())[i]
             para = params[list(params.keys())[i]]
-            
-            print(models['DecisionTree Classifier'])
 
             gs = GridSearchCV(model,param_grid=para,cv=3)
             gs.fit(x_train,y_train)

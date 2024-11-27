@@ -119,6 +119,7 @@ class ModelTrainer:
             # Saving the model in final_model for next process. We can also save this model in amazon s3 bucket by boto3
             save_pickle_obj("final_model/model.pkl",best_model)
 
+
             model_trainer_artifact = ModelTrainerArtifact(
                 self.model_trainer_config.trained_model_file_path,
                 train_metric_artifact=classification_train_metric,
