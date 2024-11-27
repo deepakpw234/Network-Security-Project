@@ -1,0 +1,39 @@
+[ 2024-11-27 11:43:35,747 ] 1038 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2024-11-27 11:43:35,753 ] 107 dagshub - INFO - Accessing as deepakpw234
+[ 2024-11-27 11:43:36,115 ] 1038 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/deepakpw234/Network-Security-Project "HTTP/1.1 200 OK"
+[ 2024-11-27 11:43:36,459 ] 1038 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2024-11-27 11:43:36,463 ] 107 dagshub - INFO - Initialized MLflow to track repo "deepakpw234/Network-Security-Project"
+[ 2024-11-27 11:43:36,464 ] 107 dagshub - INFO - Repository deepakpw234/Network-Security-Project initialized!
+[ 2024-11-27 11:48:08,843 ] 27 root - INFO - Start data ingestion
+[ 2024-11-27 11:48:08,843 ] 23 root - INFO - Data Ingestion constructor initaited
+[ 2024-11-27 11:48:08,843 ] 86 root - INFO - Calling data from mongo DB
+[ 2024-11-27 11:48:10,490 ] 88 root - INFO - MongoDB data is loaded into to dataframe
+[ 2024-11-27 11:48:10,490 ] 89 root - INFO - Raw data saving in featuer store is started
+[ 2024-11-27 11:48:10,544 ] 91 root - INFO - Raw data is saved in feature store
+[ 2024-11-27 11:48:10,544 ] 92 root - INFO - Train test split started
+[ 2024-11-27 11:48:10,602 ] 94 root - INFO - Train test completed and train and test csv's saved in ingested store
+[ 2024-11-27 11:48:10,602 ] 98 root - INFO - Train and test file path saved in the artifact
+[ 2024-11-27 11:48:10,602 ] 30 root - INFO - data ingestion completed and data artifact: DataIngestionartifact(train_file_path='artifacts\\27_11_2024_11_43_31\\data_ingestion\\ingested\\train.csv', test_file_path='artifacts\\27_11_2024_11_43_31\\data_ingestion\\ingested\\test.csv')
+[ 2024-11-27 11:48:10,603 ] 39 root - INFO - Start data validation
+[ 2024-11-27 11:48:10,663 ] 40 root - INFO - required columns are 31
+[ 2024-11-27 11:48:10,663 ] 41 root - INFO - dataframe has columns 31
+[ 2024-11-27 11:48:10,663 ] 40 root - INFO - required columns are 31
+[ 2024-11-27 11:48:10,663 ] 41 root - INFO - dataframe has columns 31
+[ 2024-11-27 11:48:10,787 ] 42 root - INFO - data validation completed and data artifact: DataValidationartifact(validation_status=True, valid_train_file_path='artifacts\\27_11_2024_11_43_31\\data_validation\\validated\\train.csv', valid_test_file_path='artifacts\\27_11_2024_11_43_31\\data_validation\\validated\\test.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifacts\\27_11_2024_11_43_31\\data_validation\\drift_report\\report.yaml')
+[ 2024-11-27 11:48:10,787 ] 50 root - INFO - Start data transformation
+[ 2024-11-27 11:48:10,787 ] 26 root - INFO - Data Transfomation class is initiated with init constructor
+[ 2024-11-27 11:48:10,787 ] 55 root - INFO - Initiate the data transformation with initiate function
+[ 2024-11-27 11:48:10,830 ] 63 root - INFO - Input and target columns created for training dataframe
+[ 2024-11-27 11:48:10,830 ] 69 root - INFO - Input and target columns craeted for test dataframe
+[ 2024-11-27 11:48:10,837 ] 42 root - INFO - Saving into numpy array
+[ 2024-11-27 11:48:10,840 ] 42 root - INFO - Saving into numpy array
+[ 2024-11-27 11:48:10,841 ] 53 root - INFO - Preprocessor is saving into pickle object
+[ 2024-11-27 11:48:10,844 ] 53 root - INFO - Preprocessor is saving into pickle object
+[ 2024-11-27 11:48:10,848 ] 53 root - INFO - data transformation completed and data artifact: DataTransformationArtifact(transformed_object_file_path='artifacts\\27_11_2024_11_43_31\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_train_file_path='artifacts\\27_11_2024_11_43_31\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifacts\\27_11_2024_11_43_31\\data_transformation\\transformed\\test.npy')
+[ 2024-11-27 11:48:10,848 ] 62 root - INFO - Start model trainer
+[ 2024-11-27 11:48:10,848 ] 75 root - INFO - Numpy array is loading
+[ 2024-11-27 11:48:10,857 ] 75 root - INFO - Numpy array is loading
+[ 2024-11-27 12:01:11,786 ] 64 root - INFO - pickle object is loading
+[ 2024-11-27 12:01:11,793 ] 53 root - INFO - Preprocessor is saving into pickle object
+[ 2024-11-27 12:01:11,814 ] 53 root - INFO - Preprocessor is saving into pickle object
+[ 2024-11-27 12:01:11,834 ] 65 root - INFO - Model trainer completed and data artifact: ModelTrainerArtifact(trained_model_path='artifacts\\27_11_2024_11_43_31\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=np.float64(0.9915538821613921), precision_score=np.float64(0.989238578680203), recall_score=np.float64(0.9938800489596084)), test_metric_artifact=ClassificationMetricArtifact(f1_score=np.float64(0.9699842022116903), precision_score=np.float64(0.961628817541112), recall_score=np.float64(0.9784860557768924)))

@@ -9,5 +9,7 @@ pymongo
 certifi
 ipykernel
 dagshub
+fastapi
+uvicorn
 # pymongo[srv]==3.6
 # -e .
