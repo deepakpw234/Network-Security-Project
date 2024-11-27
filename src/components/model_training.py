@@ -3,6 +3,8 @@ import sys
 import pandas as pd
 import numpy as np
 
+import mlflow
+
 from src.exception.exception import CustomException
 from src.logging.logger import logging
 
@@ -30,6 +32,18 @@ class ModelTrainer:
 
         except Exception as e:
             raise CustomException(e,sys)
+        
+    def track_mlflow(self,best_model, classification_train_metric):
+        with mlflow.start_run():
+            f1_score = classification_train_metric.f1_score
+            precision_score = classification_train_metric.precision_score
+            recall_score = classification_train_metric.recall_score
+
+            mlflow.log_metric("f1_score",f1_score)
+            mlflow.log_metric("precision_score",precision_score)
+            mlflow.log_metric("recall_score",recall_score)
+            mlflow.sklearn.log_model(best_model,"model")
+
         
 
     def train_model(self,x_train,y_train,x_test,y_test):
@@ -81,11 +95,15 @@ class ModelTrainer:
 
             classification_train_metric = get_classification_score(y_true=y_train,y_pred=y_train_pred)
 
-            
+            # Tracing the experiment for training with mlflow
+            self.track_mlflow(best_model,classification_train_metric)
 
             y_test_pred = best_model.predict(x_test)
 
             classification_test_metric = get_classification_score(y_true=y_test,y_pred=y_test_pred)
+
+            # Tracing the experiment for training with mlflow
+            self.track_mlflow(best_model,classification_test_metric)
 
             preprocessror = load_pickle_object(self.data_transformation_artifact.transformed_object_file_path)
 

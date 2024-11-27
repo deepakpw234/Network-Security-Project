@@ -1,0 +1,31 @@
+[ 2024-11-26 23:21:33,814 ] 23 root - INFO - Data Ingestion constructor initaited
+[ 2024-11-26 23:21:33,815 ] 23 root - INFO - Data ingestion started
+[ 2024-11-26 23:21:33,815 ] 86 root - INFO - Calling data from mongo DB
+[ 2024-11-26 23:21:35,546 ] 88 root - INFO - MongoDB data is loaded into to dataframe
+[ 2024-11-26 23:21:35,546 ] 89 root - INFO - Raw data saving in featuer store is started
+[ 2024-11-26 23:21:35,649 ] 91 root - INFO - Raw data is saved in feature store
+[ 2024-11-26 23:21:35,650 ] 92 root - INFO - Train test split started
+[ 2024-11-26 23:21:35,737 ] 94 root - INFO - Train test completed and train and test csv's saved in ingested store
+[ 2024-11-26 23:21:35,751 ] 98 root - INFO - Train and test file path saved in the artifact
+[ 2024-11-26 23:21:35,751 ] 26 root - INFO - Data ingestion Completed
+[ 2024-11-26 23:21:35,766 ] 30 root - INFO - Data validation started
+[ 2024-11-26 23:21:35,840 ] 40 root - INFO - required columns are 31
+[ 2024-11-26 23:21:35,840 ] 41 root - INFO - dataframe has columns 31
+[ 2024-11-26 23:21:35,841 ] 40 root - INFO - required columns are 31
+[ 2024-11-26 23:21:35,841 ] 41 root - INFO - dataframe has columns 31
+[ 2024-11-26 23:21:36,058 ] 33 root - INFO - Data validation completed
+[ 2024-11-26 23:21:36,058 ] 26 root - INFO - Data Transfomation class is initiated with init constructor
+[ 2024-11-26 23:21:36,058 ] 37 root - INFO - Data transformation started
+[ 2024-11-26 23:21:36,058 ] 55 root - INFO - Initiate the data transformation with initiate function
+[ 2024-11-26 23:21:36,239 ] 63 root - INFO - Input and target columns created for training dataframe
+[ 2024-11-26 23:21:36,240 ] 69 root - INFO - Input and target columns craeted for test dataframe
+[ 2024-11-26 23:21:36,256 ] 42 root - INFO - Saving into numpy array
+[ 2024-11-26 23:21:36,261 ] 42 root - INFO - Saving into numpy array
+[ 2024-11-26 23:21:36,264 ] 53 root - INFO - Preprocessor is saving into pickle object
+[ 2024-11-26 23:21:36,270 ] 40 root - INFO - Data transformation completed
+[ 2024-11-26 23:21:36,270 ] 45 root - INFO - Model training started
+[ 2024-11-26 23:21:36,270 ] 75 root - INFO - Numpy array is loading
+[ 2024-11-26 23:21:36,285 ] 75 root - INFO - Numpy array is loading
+[ 2024-11-26 23:25:52,140 ] 64 root - INFO - pickle object is loading
+[ 2024-11-26 23:25:52,152 ] 53 root - INFO - Preprocessor is saving into pickle object
+[ 2024-11-26 23:25:52,185 ] 48 root - INFO - Model training completed
