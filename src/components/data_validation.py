@@ -93,9 +93,7 @@ class DataValidation:
             # validate number of columns
             status = self.validate_no_of_columns(train_dataframe)
             if status==False:
-                print(f"Train dataframe does not contain all columns")
-            else:
-                print("euqual column")          
+                print(f"Train dataframe does not contain all columns")        
 
             status = self.validate_no_of_columns(test_datafrane)
             if status==False:

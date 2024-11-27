@@ -84,6 +84,9 @@ class DataTransformation:
             # Saving preprocessor object
             save_pickle_obj(self.data_transformation_config.transformed_object_file_path,preprocessor)
 
+            # Saving preprocessor for final_model
+            save_pickle_obj("final_model/preprocessor.pkl",preprocessor)
+
             # preparing the artifacts
 
             data_transformation_artifact = DataTransformationArtifact(

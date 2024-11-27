@@ -1,0 +1,39 @@
+[ 2024-11-27 08:36:37,727 ] 1038 httpx - INFO - HTTP Request: POST https://dagshub.com/login/oauth/middleman "HTTP/1.1 200 OK"
+[ 2024-11-27 08:36:38,124 ] 1038 httpx - INFO - HTTP Request: POST https://dagshub.com/login/oauth/access_token "HTTP/1.1 200 OK"
+[ 2024-11-27 08:36:38,504 ] 1038 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2024-11-27 08:36:38,512 ] 107 dagshub - INFO - Accessing as deepakpw234
+[ 2024-11-27 08:36:38,913 ] 1038 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/deepakpw234/Network-Security-Project "HTTP/1.1 200 OK"
+[ 2024-11-27 08:36:39,277 ] 1038 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2024-11-27 08:36:39,279 ] 107 dagshub - INFO - Initialized MLflow to track repo "deepakpw234/Network-Security-Project"
+[ 2024-11-27 08:36:39,280 ] 107 dagshub - INFO - Repository deepakpw234/Network-Security-Project initialized!
+[ 2024-11-27 08:36:39,280 ] 23 root - INFO - Data Ingestion constructor initaited
+[ 2024-11-27 08:36:39,280 ] 23 root - INFO - Data ingestion started
+[ 2024-11-27 08:36:39,280 ] 86 root - INFO - Calling data from mongo DB
+[ 2024-11-27 08:36:40,712 ] 88 root - INFO - MongoDB data is loaded into to dataframe
+[ 2024-11-27 08:36:40,713 ] 89 root - INFO - Raw data saving in featuer store is started
+[ 2024-11-27 08:36:40,796 ] 91 root - INFO - Raw data is saved in feature store
+[ 2024-11-27 08:36:40,796 ] 92 root - INFO - Train test split started
+[ 2024-11-27 08:36:40,883 ] 94 root - INFO - Train test completed and train and test csv's saved in ingested store
+[ 2024-11-27 08:36:40,883 ] 98 root - INFO - Train and test file path saved in the artifact
+[ 2024-11-27 08:36:40,884 ] 26 root - INFO - Data ingestion Completed
+[ 2024-11-27 08:36:40,894 ] 30 root - INFO - Data validation started
+[ 2024-11-27 08:36:40,962 ] 40 root - INFO - required columns are 31
+[ 2024-11-27 08:36:40,962 ] 41 root - INFO - dataframe has columns 31
+[ 2024-11-27 08:36:40,962 ] 40 root - INFO - required columns are 31
+[ 2024-11-27 08:36:40,962 ] 41 root - INFO - dataframe has columns 31
+[ 2024-11-27 08:36:41,162 ] 33 root - INFO - Data validation completed
+[ 2024-11-27 08:36:41,162 ] 26 root - INFO - Data Transfomation class is initiated with init constructor
+[ 2024-11-27 08:36:41,162 ] 37 root - INFO - Data transformation started
+[ 2024-11-27 08:36:41,162 ] 55 root - INFO - Initiate the data transformation with initiate function
+[ 2024-11-27 08:36:41,228 ] 63 root - INFO - Input and target columns created for training dataframe
+[ 2024-11-27 08:36:41,229 ] 69 root - INFO - Input and target columns craeted for test dataframe
+[ 2024-11-27 08:36:41,238 ] 42 root - INFO - Saving into numpy array
+[ 2024-11-27 08:36:41,242 ] 42 root - INFO - Saving into numpy array
+[ 2024-11-27 08:36:41,244 ] 53 root - INFO - Preprocessor is saving into pickle object
+[ 2024-11-27 08:36:41,249 ] 40 root - INFO - Data transformation completed
+[ 2024-11-27 08:36:41,251 ] 45 root - INFO - Model training started
+[ 2024-11-27 08:36:41,251 ] 75 root - INFO - Numpy array is loading
+[ 2024-11-27 08:36:41,261 ] 75 root - INFO - Numpy array is loading
+[ 2024-11-27 08:41:15,433 ] 64 root - INFO - pickle object is loading
+[ 2024-11-27 08:41:15,447 ] 53 root - INFO - Preprocessor is saving into pickle object
+[ 2024-11-27 08:41:15,481 ] 48 root - INFO - Model training completed

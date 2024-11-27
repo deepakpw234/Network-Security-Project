@@ -22,6 +22,8 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import r2_score
 
+import dagshub
+dagshub.init(repo_owner='deepakpw234', repo_name='Network-Security-Project', mlflow=True)
 
 class ModelTrainer:
     def __init__(self,data_transformation_artifact:DataTransformationArtifact,
@@ -58,21 +60,21 @@ class ModelTrainer:
 
             params = {
                 "RandomForest Classifier": {
-                    # 'criterion':['gini','entropy','log_loss'],
-                    # 'max_features': ['sqrt','log2',None],
+                    'criterion':['gini','entropy','log_loss'],
+                    'max_features': ['sqrt','log2',None],
                     'n_estimators': [8,16,32,64,128,256]
                 },
                 'DecisionTree Classifier': {
                     'criterion':['gini','entropy','log_loss'],
-                    # 'splitter': ['best','random'],
-                    # 'max_features': ['sqrt','log2']
+                    'splitter': ['best','random'],
+                    'max_features': ['sqrt','log2']
                 },
                 'GradientBoosting Classifier':{
-                    # 'loss':['log_loss','exponential'],
+                    'loss':['log_loss','exponential'],
                     'learning_rate':[0.1,0.01,0.05,0.001],
                     'subsample':[0.6,0.7,0.75,0.8,0.85,0.9],
-                    # 'criterion':['squared_error','friedman_mse'],
-                    # 'max_features': ['sqrt','log2','auto'],
+                    'criterion':['squared_error','friedman_mse'],
+                    'max_features': ['sqrt','log2','auto'],
                     'n_estimators': [8,16,32,64,128,256]
                 },
                 'Logistic Regression':{},
@@ -113,6 +115,9 @@ class ModelTrainer:
             network_model = NetworkData(preprocessor=preprocessror,model=best_model)
 
             save_pickle_obj(self.model_trainer_config.trained_model_file_path,obj=network_model)
+
+            # Saving the model in final_model for next process. We can also save this model in amazon s3 bucket by boto3
+            save_pickle_obj("final_model/model.pkl",best_model)
 
             model_trainer_artifact = ModelTrainerArtifact(
                 self.model_trainer_config.trained_model_file_path,
