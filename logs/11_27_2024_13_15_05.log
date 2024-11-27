@@ -1,0 +1,8 @@
+[ 2024-11-27 13:15:08,575 ] 1038 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2024-11-27 13:15:08,579 ] 107 dagshub - INFO - Accessing as deepakpw234
+[ 2024-11-27 13:15:08,982 ] 1038 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/deepakpw234/Network-Security-Project "HTTP/1.1 200 OK"
+[ 2024-11-27 13:15:09,344 ] 1038 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2024-11-27 13:15:09,347 ] 107 dagshub - INFO - Initialized MLflow to track repo "deepakpw234/Network-Security-Project"
+[ 2024-11-27 13:15:09,355 ] 107 dagshub - INFO - Repository deepakpw234/Network-Security-Project initialized!
+[ 2024-11-27 13:16:36,726 ] 64 root - INFO - pickle object is loading
+[ 2024-11-27 13:16:36,727 ] 64 root - INFO - pickle object is loading
